@@ -1,28 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
 *{
     box-sizing: border-box;
 }
 body{
-    background-image: url(./images/bradley-ziffer-IAyLd1AYxdA-unsplash.jpg) ;
+    background-color:/* url(./images/bradley-ziffer-IAyLd1AYxdA-unsplash.jpg)  */ #FFD39A;
     background-repeat: no-repeat;
     background-size: cover;
-    
+    font-family: 'Philosopher', sans-serif;
 }
 #header-nav{
     background-color: black;
-    opacity: .3;
+    opacity: .5;
     border: 0;
     padding: 10px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 .navbar-header  .nav-texts{
     color: #fffdf7;
     opacity: 1;
     font-weight: 600;
     font-size: 30px;
-    animation: rotate 2s infinite;
+    animation: rotate 5s infinite;
+    animation-delay: 2s;
 }
 @keyframes rotate{
     50% {
-        transform: rotatex(100deg);
+        transform: rotatex(150deg);
+    }
+}
+.navbar-toggle{
+    animation: toggle 2s infinite;
+    animation-delay: 2s;
+}
+@keyframes toggle{
+    50%{
+        transform: rotatez(20deg);
     }
 }
 .navbar-header .nav-texts:hover{
@@ -47,10 +63,6 @@ body{
     box-shadow: 0px 2px 5px 6px rgb(54, 52, 52);
 }
 .landing{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     display: grid;
     place-content: center;
     min-height: 100vh;
@@ -58,7 +70,129 @@ body{
 }
 h1{
     padding-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 5em;
+    font-weight: 600;
+    color: black;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+@keyframes scale{
+    100%{
+        transform: scale(1);
+    }
+}
+h1 > .h1-text{
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@keyframes fade-in {
+    100%{
+        opacity: 1;
+        filter: blur(0);
+    }
 }
 h2{
-    padding-left: 2em;
+    font-size: 3.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 50px;
+    padding-left: 1.2em;
+    color: black;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+@keyframes scale{
+    100%{
+        transform: scale(1);
+    }
+}
+h2 > .h2-text{
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@keyframes fade-in {
+    100%{
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+h3{
+    font-size: 2em;
+    font-weight: 600;
+    padding-top: 1em;
+    color: black;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+@keyframes scale{
+    100%{
+        transform: scale(1);
+    }
+}
+h3 > .h3-text{
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    animation: work 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@keyframes work {
+    100%{
+        opacity: 1;
+        filter: blur(0);
+        
+    }
+    50%{
+        transform: rotatex(180deg);
+    }
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+.butt1{
+    background-color: #f59342;
+    border: 0;
+    padding: 15px;
+}
+.buttons > a{
+    transition: 1s;
+    transition-property: transform;
+    color: black;
+}
+.butt2{
+    background-color: #f59342;
+    border: 0;
+    padding: 15px;
+}
+button:hover{
+    background-color: #f59342;
+    text-decoration: none;
+    box-shadow: 0px 2px 5px 3px #57481e;
+    transform: scale(1.1);
+}
+.lineUp{
+    animation: 6s anim-lineUp ease-out 1;
+}
+@keyframes anim-lineUp {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+    20%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
